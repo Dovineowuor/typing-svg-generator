@@ -20,7 +20,7 @@ To use the Typing SVG Generator, follow these steps:
 1. **Clone the Repository**
 
     ```bash
-    git clone https://github.com/yourusername/typing-svg-generator.git
+    git clone https://github.com/dovineowuor/typing-svg-generator.git
     cd typing-svg-generator
     ```
 
