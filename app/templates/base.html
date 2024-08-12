@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Typing SVG Generator{% endblock %}</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/loader.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/toggle-dark.css') }}">
+    <!-- JavaScript -->
+    <script src="{{ url_for('static', filename='js/jscolor.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/toggle-dark.js') }}" defer></script>
+</head>
+<body>
+    <header class="bg-primary text-white py-3">
+        <div class="container">
+            <h1 class="mb-0">Typing SVG Generator</h1>
+            
+    <!-- Dark Mode Toggle Button -->
+    <button id="toggle-dark-mode" class="btn btn-light mt-2">Toggle Dark Mode</button>
+        </div>
+    </header>
+    
+    <main class="container my-4">
+        {% block content %}
+        <!-- Default content block -->
+        {% endblock %}
+    </main>
+    
+    <footer class="bg-light text-center py-3">
+        <div class="container">
+            <p class="mb-0">&copy; 2024 Typing SVG Generator. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
