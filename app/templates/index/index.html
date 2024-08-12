@@ -1,0 +1,178 @@
+{% extends "base.html" %}
+
+{% block title %}Typing SVG Generator{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    
+    <div class="row mt-4">
+        <!-- Form Section -->
+        <div class="col-lg-6 col-md-12 mb-4">
+            <h2 class="mb-4">Generate Your SVG</h2>
+            <form id="svg-form" class="needs-validation" novalidate>
+                <!-- Text Input -->
+                <div class="mb-3">
+                    <label for="lines-input" class="form-label">Text (lines separated by `;`):</label>
+                    <input type="text" id="lines-input" name="lines" class="form-control" placeholder="Enter text; separated by semicolons" required>
+                    <div class="invalid-feedback">
+                        Please enter the text.
+                    </div>
+                </div>
+                
+                <!-- Font Selection -->
+                <div class="mb-3">
+                    <label for="font-select" class="form-label">Font:</label>
+                    <select id="font-select" name="font" class="form-select">
+                        <option value="monospace">Monospace</option>
+                        <option value="Arial">Arial</option>
+                        <option value="Times New Roman">Times New Roman</option>
+                        <option value="Courier New">Courier New</option>
+                        <!-- Add more fonts if needed -->
+                    </select>
+                </div>
+
+                <!-- Font Size and Weight -->
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="font-size" class="form-label">Font Size:</label>
+                            <input type="number" id="font-size" name="size" class="form-control" value="20" min="1">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="font-weight" class="form-label">Font Weight:</label>
+                            <input type="number" id="font-weight" name="font_weight" class="form-control" value="400" min="100" max="900">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text and Background Color -->
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="text-color" class="form-label">Text Color:</label>
+                            <input type="color" id="text-color" name="color" class="form-control" value="#36BCF7">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="background-color" class="form-label">Background Color:</label>
+                            <input type="color" id="background-color" name="background" class="form-control" value="#fafafa">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dimensions -->
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="height" class="form-label">Height (px):</label>
+                            <input type="number" id="height" name="height" class="form-control" value="50" min="1">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="width" class="form-label">Width (px):</label>
+                            <input type="number" id="width" name="width" class="form-control" value="400" min="1">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text Centering and Multiline Options -->
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="center" class="form-label">Center Text Horizontally:</label>
+                            <select id="center" name="center" class="form-select">
+                                <option value="false">No</option>
+                                <option value="true">Yes</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="vCenter" class="form-label">Center Text Vertically:</label>
+                            <select id="vCenter" name="vCenter" class="form-select">
+                                <option value="false">No</option>
+                                <option value="true">Yes</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="multiline" class="form-label">Multiline:</label>
+                            <select id="multiline" name="multiline" class="form-select">
+                                <option value="false">No</option>
+                                <option value="true">Yes</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Animation Options -->
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="duration" class="form-label">Duration (ms):</label>
+                            <input type="number" id="duration" name="duration" class="form-control" value="5000" min="1">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="pause" class="form-label">Pause (ms):</label>
+                            <input type="number" id="pause" name="pause" class="form-control" value="0" min="0">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="repeat" class="form-label">Repeat:</label>
+                            <select id="repeat" name="repeat" class="form-select">
+                                <option value="true">Yes</option>
+                                <option value="false">No</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Separator and Letter Spacing -->
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="separator" class="form-label">Separator:</label>
+                            <input type="text" id="separator" name="separator" class="form-control" value=";">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="letter-spacing" class="form-label">Letter Spacing:</label>
+                            <input type="text" id="letter-spacing" name="letterSpacing" class="form-control" value="normal">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn btn-primary">Generate SVG</button>
+            </form>
+        </div>
+
+        <!-- SVG Preview Section -->
+        <div class="col-lg-6 col-md-12 mt-4">
+            <h2 class="mb-4">SVG Preview</h2>
+            <section id="svg-preview" class="border p-3">
+                <!-- SVG preview will be inserted here -->
+            </section>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Dark mode toggle functionality
+    document.getElementById('toggle-dark-mode').addEventListener('click', function() {
+        document.body.classList.toggle('bg-dark');
+        document.body.classList.toggle('text-light');
+        this.classList.toggle('btn-dark');
+        this.classList.toggle('btn-light');
+    });
+</script>
+{% endblock %}
