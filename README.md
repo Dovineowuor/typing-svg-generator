@@ -50,17 +50,21 @@ The project is organized as follows:
 
 - **`app/`**: Contains the Flask application files.
   - **`__init__.py`**: Initializes the Flask app and its configuration.
-  - **`routes.py`**: Defines the routes and view functions for the application.
-- **`static/`**: Contains static files like CSS, JavaScript, and images.
-  - **`css/style.css`**: Styles for the application.
-  - **`css/loader.css`**: Styles for the loader animation.
-  - **`css/toggle-dark.css`**: Styles for dark mode toggle.
-  - **`js/script.js`**: JavaScript for handling form inputs and SVG preview.
-  - **`js/toggle-dark.js`**: JavaScript for toggling dark mode.
-  - **`js/jscolor.min.js`**: JavaScript color picker library.
-- **`templates/`**: Contains HTML templates.
-  - **`index.html`**: Main HTML file for the Typing SVG Generator.
-- **`config.py`**: Configuration settings for the Flask app.
+  - **`static/`**: Contains static files like CSS, JavaScript, and images.
+    - **`css/style.css`**: Styles for the application.
+    - **`css/loader.css`**: Styles for the loader animation.
+    - **`css/toggle-dark.css`**: Styles for dark mode toggle.
+    - **`js/script.js`**: JavaScript for handling form inputs and SVG preview.
+    - **`js/toggle-dark.js`**: JavaScript for toggling dark mode.
+    - **`js/jscolor.min.js`**: JavaScript color picker library.
+    - **`images/`**: Directory for images used in the application.
+  - **`templates/`**: Contains HTML templates.
+    - **`index.html`**: Main HTML file for the Typing SVG Generator.
+  - **`utils/`**: Contains utility files.
+    - **`configs/`**: Configuration files.
+      - **`config.py`**: Configuration settings for the Flask app.
+- **`LICENSE`**: License information for the project.
+- **`README.md`**: This file, which provides an overview of the project.
 
 ## Usage
 
@@ -80,6 +84,6 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Contact
 
-If you have any questions or feedback, please reach out via GitHub Issues or contact the repository owner at [owuordove@gmail.com](mailto:oquordove@gmail.com).
+If you have any questions or feedback, please reach out via GitHub Issues or contact the repository owner at [owuordove@gmail.com](mailto:owuordove@gmail.com).
 
 ---
